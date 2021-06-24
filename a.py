@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 def find_next_empty(puzzle):
     for r in range(9):
@@ -34,6 +35,9 @@ def solve_sudoku(puzzle):
     for g in range(1,10):
       if check_guess(puzzle,g,r,c):
           puzzle[r][c]=g
+          time.sleep(0.5)
+          print(np.array(puzzle))
+          print("\n\n")
           if  solve_sudoku(puzzle):
                return True
 
